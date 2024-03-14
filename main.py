@@ -25,6 +25,7 @@ print("Sortarea aleasa:", end=" ")
 sort = int(input())
 
 
+#https://www.geeksforgeeks.org/bubble-sort/
 def bubbleSort(arr):
     n = len(arr)
     swapped = False
@@ -38,6 +39,7 @@ def bubbleSort(arr):
             return
 
 
+#https://www.geeksforgeeks.org/insertion-sort/
 def insertionSort(arr):
     n = len(arr)
 
@@ -53,6 +55,7 @@ def insertionSort(arr):
         arr[j + 1] = key
 
 
+#https://www.geeksforgeeks.org/selection-sort/
 def selectionSort(A):
     for i in range(len(A)):
         min_idx = i
@@ -62,25 +65,23 @@ def selectionSort(A):
         A[i], A[min_idx] = A[min_idx], A[i]
 
 
+#https://www.geeksforgeeks.org/merge-sort/
 def merge(arr, l, m, r):
     n1 = m - l + 1
     n2 = r - m
 
-    # create temp arrays
     L = [0] * (n1)
     R = [0] * (n2)
 
-    # Copy data to temp arrays L[] and R[]
     for i in range(0, n1):
         L[i] = arr[l + i]
 
     for j in range(0, n2):
         R[j] = arr[m + 1 + j]
 
-    # Merge the temp arrays back into arr[l..r]
-    i = 0  # Initial index of first subarray
-    j = 0  # Initial index of second subarray
-    k = l  # Initial index of merged subarray
+    i = 0
+    j = 0
+    k = l
 
     while i < n1 and j < n2:
         if L[i] <= R[j]:
@@ -91,37 +92,27 @@ def merge(arr, l, m, r):
             j += 1
         k += 1
 
-    # Copy the remaining elements of L[], if there
-    # are any
     while i < n1:
         arr[k] = L[i]
         i += 1
         k += 1
 
-    # Copy the remaining elements of R[], if there
-    # are any
     while j < n2:
         arr[k] = R[j]
         j += 1
         k += 1
 
 
-# l is for left index and r is right index of the
-# sub-array of arr to be sorted
-
-
 def mergeSort(arr, l, r):
     if l < r:
-        # Same as (l+r)//2, but avoids overflow for
-        # large l and h
         m = l + (r - l) // 2
 
-        # Sort first and second halves
         mergeSort(arr, l, m)
         mergeSort(arr, m + 1, r)
         merge(arr, l, m, r)
 
 
+#https://www.geeksforgeeks.org/quick-sort/
 def partition(array, low, high):
     pivot = array[high]
 
@@ -172,7 +163,7 @@ def countingSort(arr, exp1):
     for i in range(0, len(arr)):
         arr[i] = output[i]
 
-
+#https://www.geeksforgeeks.org/radix-sort/
 def radixSort(arr):
     max1 = max(arr)
 
@@ -182,6 +173,7 @@ def radixSort(arr):
         exp *= 10
 
 
+#https://www.geeksforgeeks.org/heap-sort/
 def heapify(arr, n, i):
     largest = i
     l = 2 * i + 1
