@@ -25,7 +25,6 @@ print("Sortarea aleasa:", end=" ")
 sort = int(input())
 
 
-#https://www.geeksforgeeks.org/bubble-sort/
 def bubbleSort(arr):
     n = len(arr)
     swapped = False
@@ -39,7 +38,7 @@ def bubbleSort(arr):
             return
 
 
-#https://www.geeksforgeeks.org/insertion-sort/
+
 def insertionSort(arr):
     n = len(arr)
 
@@ -55,7 +54,6 @@ def insertionSort(arr):
         arr[j + 1] = key
 
 
-#https://www.geeksforgeeks.org/selection-sort/
 def selectionSort(A):
     for i in range(len(A)):
         min_idx = i
@@ -65,7 +63,6 @@ def selectionSort(A):
         A[i], A[min_idx] = A[min_idx], A[i]
 
 
-#https://www.geeksforgeeks.org/merge-sort/
 def merge(arr, l, m, r):
     n1 = m - l + 1
     n2 = r - m
@@ -112,7 +109,6 @@ def mergeSort(arr, l, r):
         merge(arr, l, m, r)
 
 
-#https://www.geeksforgeeks.org/quick-sort/
 def partition(array, low, high):
     pivot = array[high]
 
@@ -163,7 +159,6 @@ def countingSort(arr, exp1):
     for i in range(0, len(arr)):
         arr[i] = output[i]
 
-#https://www.geeksforgeeks.org/radix-sort/
 def radixSort(arr):
     max1 = max(arr)
 
@@ -173,7 +168,6 @@ def radixSort(arr):
         exp *= 10
 
 
-#https://www.geeksforgeeks.org/heap-sort/
 def heapify(arr, n, i):
     largest = i
     l = 2 * i + 1
